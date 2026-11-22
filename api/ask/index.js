@@ -11,7 +11,7 @@ module.exports = async function (context, req) {
     for (let attempt = 1; attempt <= 3; attempt++) {
       try {
         response = await ai.models.generateContent({
-          model: "gemini-2.5-flash",
+          model: "gemini-3.8-flash",
           contents: "Say hello to Patrick in one sentence.",
         });
 
