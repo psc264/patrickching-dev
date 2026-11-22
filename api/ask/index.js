@@ -1,19 +1,29 @@
+const { GoogleGenAI } = require("@google/genai");
+
 module.exports = async function (context, req) {
   try {
-    const { GoogleGenAI } = require("@google/genai");
+    const ai = new GoogleGenAI({
+      apiKey: process.env.GEMINI_API_KEY,
+    });
+
+    const response = await ai.models.generateContent({
+      model: "gemini-3.8-flash",
+      contents: "Say hello to Patrick in one sentence.",
+    });
 
     context.res = {
       status: 200,
       body: {
-        packageLoaded: true
-      }
+        success: true,
+        answer: response.text,
+      },
     };
   } catch (error) {
     context.res = {
       status: 500,
       body: {
-        error: error.message
-      }
+        error: error.message,
+      },
     };
   }
 };
