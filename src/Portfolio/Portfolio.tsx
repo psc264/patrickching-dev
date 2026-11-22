@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import CommitRoulette from "./components/CommitRoulette";
 import TransformDemo from "./components/TransformDemo";
+import TclDemo from "./components/TclDemo";
 
 export default function Portfolio() {
     const [dark, setDark] = useState(false);
@@ -54,13 +55,14 @@ export default function Portfolio() {
             <p className="hint">Poke around in the terminal. There is also a secret code from the 1980s.</p>
             </section>
             <Background />
-            <Projects />
+            {/* <Projects /> */}
             <p className="lead">
                 During my career I've built integrations using HL7, FHIR,
                 databases, files, and REST APIs. This simple demo shows how
                 structured data can be transformed into an HL7 message.
             </p>
             <TransformDemo />
+            <TclDemo />
             <Skills />
             <CommitRoulette />
         </main>
