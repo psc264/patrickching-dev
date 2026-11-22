@@ -10,7 +10,6 @@ export const ME = {
     headline: "Engineer, problem solver, and lifelong learner.",
     blurb: "My career spans military service, transplant medicine, software development, and mission leadership. I build systems that improve workflows, automate processes, and solve complex operational problems while continuing to deepen my expertise in software engineering and machine learning.",
     email: "patrickching264@gmail.com",
-    //github: "https://github.com/your-handle",
     skills: {
         Languages: ["C#", "Java", "JavaScript", "TypeScript", "Python", "SQL", "VB6 and VBA (legacy)"],
         Frameworks: ["React", "Vue.js", ".NET", "Node.js", "Express.js", "Spring Boot"],
