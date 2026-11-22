@@ -1,0 +1,7 @@
+{
+  "name": "patrick-api",
+  "version": "1.0.0",
+  "dependencies": {
+    "@google/genai": "^3.6.1"
+  }
+}

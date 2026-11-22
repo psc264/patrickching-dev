@@ -5,8 +5,7 @@ module.exports = async function (context, req) {
     context.res = {
       status: 200,
       body: {
-        packageLoaded: !!GoogleGenAI,
-        hasKey: !!process.env.GEMINI_API_KEY
+        packageLoaded: true
       }
     };
   } catch (error) {
