@@ -71,7 +71,7 @@ export default function Terminal({ onTheme, onRain }: { onTheme: () => void; onR
         }
         if (cmd === "contact") {
             return {
-                lines: [ME.email, ME.github],
+                lines: [ME.email],
             };
         } 
         if (cmd === "joke") {
