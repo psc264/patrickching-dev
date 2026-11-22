@@ -1,11 +1,10 @@
 module.exports = async function (context, req) {
-  const name = req.query.name || "friend";
+  const apiKey = process.env.GEMINI_API_KEY;
 
   context.res = {
     status: 200,
     body: {
-      success: true,
-      message: `Hello ${name}!`
+      hasGeminiKey: !!apiKey
     }
   };
 };
