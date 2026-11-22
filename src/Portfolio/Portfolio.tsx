@@ -6,7 +6,6 @@ import Avatar from "./components/Avatar";
 import Terminal from "./components/Terminal";
 import Rain from "./components/Rain";
 import Background from "./components/Background";
-import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import CommitRoulette from "./components/CommitRoulette";
 import TransformDemo from "./components/TransformDemo";
@@ -55,7 +54,6 @@ export default function Portfolio() {
             <p className="hint">Poke around in the terminal. There is also a secret code from the 1980s.</p>
             </section>
             <Background />
-            {/* <Projects /> */}
             <p className="lead">
                 During my career I've built integrations using HL7, FHIR,
                 databases, files, and REST APIs. This simple demo shows how
