@@ -1,7 +1,6 @@
-export async function POST({ request }) {
-    const { prompt } = await request.json();
-
-    return Response.json({
-        answer: `Azure API received: ${prompt}`,
-    });
+export default async function handler(req, res) {
+  return res.status(200).json({
+    success: true,
+    message: "API is working"
+  });
 }
