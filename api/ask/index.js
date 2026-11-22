@@ -7,29 +7,35 @@ module.exports = async function (context, req) {
     });
 
     let response;
+    let lastError;
 
-    for (let attempt = 1; attempt <= 3; attempt++) {
+    for (let attempt = 1; attempt <= 5; attempt++) {
       try {
         response = await ai.models.generateContent({
           model: "gemini-3.8-flash",
-          contents: "Say hello to Patrick in one sentence.",
+          contents: "Reply with exactly: Gemini Azure test successful",
         });
 
         break;
       } catch (error) {
-        if (attempt === 3) {
-          throw error;
-        }
+        lastError = error;
 
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        if (attempt < 5) {
+          await new Promise(resolve =>
+            setTimeout(resolve, attempt * 3000)
+          );
+        }
       }
+    }
+
+    if (!response) {
+      throw lastError;
     }
 
     context.res = {
       status: 200,
       body: {
         success: true,
-        model: "gemini-2.5-flash",
         answer: response.text,
       },
     };
@@ -39,6 +45,7 @@ module.exports = async function (context, req) {
       body: {
         success: false,
         error: error.message,
+        details: JSON.stringify(error),
       },
     };
   }
